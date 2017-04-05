@@ -9,7 +9,7 @@ function initRouter(db){
   router.get('/', function(req, res, next) {
     blogMdl.obtenerUsuarios(function(err, Usuarios){
         if(err) return res.status(404).json({"error":"No se obtiene Datos"});
-        return res.status(200).json(usuarios);
+        return res.status(200).json(Usuarios);
     });
   }); // end /
 

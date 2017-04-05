@@ -70,7 +70,7 @@ function onAddClick(e){
 
     showLoading();
     $.post(
-      "usuarios/add",
+      "/usuarios/add",
       dataToSend,
       onAddSuccess,
       'json'
@@ -96,7 +96,7 @@ function cargar_microblog_users(){
     'usuarios/',
     {},
     function(_microblog,successTxt, xhrq){
-      //console.log(_microblog);
+      console.log(_microblog);
       $htmlBuffer = _microblog.map(function(miblog, i){
         return '<li><a href="#publicar" data-id="'+miblog._id+'">'+miblog.Nombre+'</a></li>';
       });
