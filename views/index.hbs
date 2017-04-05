@@ -1,17 +1,62 @@
-
-
-<div data-role="page" id="home">
+<!-- esto es otra pagina -->
+<div data-role="page" id="listUsers">
   <div data-role="header" data-position="fixed">
-    <h4>MicroBlog</h4>
-    <h5></h5>
+    <h4>Lista de Usuarios</h4>
   </div>
   <div class="ui-content" role="main">
-    <h1>Bienvenidos</h1>
-    <label for="">Usuario</label>
-    <input type="text" name="nombre" value="">
+    <ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar Usuario"
+      id="users_usuarios_list">
+    </ul>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li>
+          <a href="#new">Nuevo</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- esto es otra pagina -->
 
-    <input type="button" name="ingresar" value="Ingresar">
+<div data-role="page" id="new">
+  <div data-role="header" data-position="fixed">
+    <h4>Nuevo Usuario</h4>
+  </div>
+  <div class="ui-content" role="users">
+    <form id="new_form">
+        <label for="">Usuario</label>
+        <input type="text" id="usuario" name="usuario" value="" placeholder="Nombre de Usuario">
 
+        <a id="btnCrearUsuario" class="ui-btn">Crear</a>
+          <a href="#listUsers" class="ui-btn">Cancelar</a>
+    </form>
   </div>
 
+  <div data-role="footer" data-position="fixed">
+    <h5>Derechos Reservados SW 2017</h5>
+  </div>
+</div>
+
+<!-- esto es otra pagina -->
+<div data-role="page" id="publicar">
+  <div data-role="header" data-position="fixed">
+    <h4>Postear</h4>
+  </div>
+  <div class="ui-content" role="main">
+    <form id="post_form">
+      <h2 id="publicar_nombre">Nombre de usuario</h2>
+      <input type="hidden" value="" name="nombre_id" id="nombre_id"/>
+      <label for="">¿Que estas pensando?</label>
+      <textarea id="postear" name="msj" rows="8" cols="80"></textarea>
+      <br />
+      <br />
+      <a id="btnPublicar" class="ui-btn">Publicar</a>
+      <a href="#blog" class="ui-btn">Cancelar</a>
+    </form>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h5>Derechos Reservados SW 2017</h5>
+  </div>
 </div>
