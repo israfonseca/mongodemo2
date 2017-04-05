@@ -29,7 +29,7 @@ function microblog_init(db){
   // funcion para obtener todas las usuarios registradas
 
   modeloBlogger.obtenerUsuarios = function(handler){
-    usuarioColl.find({}).project({"Nombre":1}).sort([["Nombre",1]]).toArray(function(err, Usuarios){
+    usuarioColl.find({}).project({"Usuarios":1}).sort([["Usuarios",1]]).toArray(function(err, Usuarios){
       if(err){
         handler(err, null);
       }else{

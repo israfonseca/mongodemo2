@@ -112,9 +112,9 @@ function cargar_microblog_users(){
     'usuarios/',
     {},
     function(_microblog,successTxt, xhrq){
-      console.log(_microblog);
+      //console.log(_microblog);
       $htmlBuffer = _microblog.map(function(miblog, i){
-        return '<li><a href="#publicar" data-id="'+miblog._id+'">'+miblog.Nombre+'</a></li>';
+        return '<li><a href="#publicar" data-id="'+miblog._id+'">'+miblog.usuario+'</a></li>';
       });
 
       $("#users_usuarios_list").html($htmlBuffer.join('')).listview('refresh');
@@ -131,7 +131,7 @@ function obtengaDatos(){
     {},
     function onAddSuccess(data, sucessTxt, xhrq){
         console.log(data);
-        $("#publicar_nombre").html(data.Usuario);
+        $("#publicar_nombre").html(data.usuario);
 
     } ,
     'json'
