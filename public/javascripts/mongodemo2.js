@@ -33,7 +33,7 @@ function microblog_init(e){
       $("#btnCrearUsuario").on("vclick", onAddClick);
       break;
     case "publicar":
-      $("#btnPublicar").on("vclick", onAddClick);
+      $("#btnPublicar").on("vclick", onAddPost);
       break;
   }
 }
@@ -71,6 +71,22 @@ function onAddClick(e){
     showLoading();
     $.post(
       "/usuarios/add",
+      dataToSend,
+      onAddSuccess,
+      'json'
+    );
+}
+
+function onAddPost(e){
+    var formValues = $("#post_form").serializeArray();
+    var dataToSend = {};
+    formValues.map(function(obj, i){
+      dataToSend[obj.name] = obj.value;
+    });
+
+    showLoading();
+    $.post(
+      "/usuarios/addPost",
       dataToSend,
       onAddSuccess,
       'json'

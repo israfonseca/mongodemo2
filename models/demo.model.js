@@ -14,7 +14,7 @@ function microblog_init(db){
           }
         });
     };
-/*
+
     // funcion para agregar publicaciones
     modeloBlogger.agregarPublicacion = function(data, handler){
           publicacionColl.insert(data, function(err, doc){
@@ -24,7 +24,7 @@ function microblog_init(db){
               handler(null, doc);
             }
           });
-      };*/
+      };
 
   // funcion para obtener todas las usuarios registradas
 

@@ -17,10 +17,19 @@ function initRouter(db){
     router.post('/add',function(req,res,next){
       var nuevoUsuario = {};
       nuevoUsuario.usuario = req.body.usuario;
-    //  console.log(agregarUsuario);
       blogMdl.agregarUsuario(nuevoUsuario,function(err, UsuarioAgregado){
         if(err) return res.status(403).json({"error":"error al ingresar usuario."});
         return res.status(200).json(UsuarioAgregado);
+      });
+
+    }); // end /add
+
+    router.post('/addPost',function(req,res,next){
+      var nuevoPost = {};
+      nuevoPost.postear = req.body.postear;
+      blogMdl.agregarPublicacion(nuevoPost,function(err, PostAgregado){
+        if(err) return res.status(403).json({"error":"error al ingresar publicacion."});
+        return res.status(200).json(PostAgregado);
       });
 
     }); // end /add
